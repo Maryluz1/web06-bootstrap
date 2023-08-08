@@ -230,3 +230,44 @@ function getCoursesWithFilter( array1Courses){
       return commonCourses;
 }
 console.log(`Comúnxpartes: ${getCoursesWithFilter( student1Courses, student2Courses )}`);
+
+// -------------- Contar la cantidad de caracteres de una frase ---------------------
+/*
+   "peso pluma pica papas con un pico y una pala con un pico pica papas peso pluma";
+
+   Mostrar la cantidad de letras 'p'.
+   Usar funciones flecha.
+
+   Recomendaciones de metodos: split, filter.
+*/
+
+const phasePP = "Peso Pluma pica papas con un pico y una pala con un pico pica papas Peso Pluma";
+const counterCharacter = ( phase, character ) => phase.split(character).length-1;
+
+const counterCharacterUnsensitive = ( phase, character ) => phase.toLowerCase().split(character).length-1;
+
+console.log(`Cantidad de letras 'p' : ${ counterCharacter(phasePP, "p") } `); // 13
+console.log(`Cantidad de letras 'p' : ${ counterCharacter(phasePP, "p") } `); // 13
+console.log(`Cantidad de letras p:${ counterCharacter(phasePP, "p") + counterCharacter(phasePP, "P" )}`);
+
+
+//---------------- Recursividad ----------------------
+// -------------- Recursividad ---------------------
+/*
+  Una función recursiva es una función que se llama así misma durante su ejecución.
+
+  Se utilizan en algoritmos y soluciones que se basan en la división y conquista
+  como cálculos matemáticos, recorrido de estructura de datos y algoritmos de búsqueda
+  y ordenamiento.
+
+  Patrón:
+    function nombreFuncionRecursiva( parametro  ){
+        if( condicionParo){
+            return expresión;
+        }
+        else {
+            // llamada recursiva
+            nombreFuncion( nuevoParametro );
+        }
+    }
+*/
