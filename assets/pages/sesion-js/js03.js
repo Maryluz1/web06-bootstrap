@@ -150,7 +150,7 @@ const setVelocidadVentilador = ( velocidad = 0)=>{
     let mensaje;
 
     //la condicional switch utiliza la comparacion estricta ( === )
-    switch ( velocidad ){
+    switch (parseInt (velocidad )){
         case 0:
             mensaje = "apagado";
             break;
