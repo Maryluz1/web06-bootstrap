@@ -209,9 +209,9 @@ console.log(msj);
 
  */
 
-const pagoTarjetaCredito = true;
-
-if (pagoTarjetaCredito === true ) msj= "A realizado el pago";
+const pagoTarjetaCredito = false;
+let msj;
+if (pagoTarjetaCredito) msj= "A realizado el pago";
 else msj= "No ha realizado el pago de TC";
 
 console.log(`El usuario ${msj}`);
