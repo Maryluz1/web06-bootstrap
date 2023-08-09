@@ -86,23 +86,24 @@ Sintaxis:
 */
 
 const temperatura = 25;
-let mensaje = "Temperatura de "
+let mensaje = "Temperatura de ";
 
-if ( temperatura === 22 ){      // si la temperatura = a 22 imprimira que la temperatura es ideal, si es diferente imprimira que la temperatura no es la ideal.
-    mensaje += `${temperatura} grados centigrados es ideal` ;// += operador de concatenacion // mensaje - mensaje + nvoTexto
-    
+if ( temperatura === 22 ){
+    mensaje += `${temperatura} grados centigrados es ideal` ; // mensaje = mensaje + nvoTexto
 }
-
-else if( temperatura >= 15 && temperatura<= 21){
-    mensaje += `${temperatura} grados centigrados es fría`
-} 
-
-
-else if(temperatura>=23 && temperatura <= 30){
+else if ( temperatura >= 15 && temperatura<= 21) {
+    mensaje += `${temperatura} grados centigrados es fría` ;
+}
+else if( temperatura>=23 && temperatura <= 30 ){
+//else if( temperatura <= 30 &&  temperatura>=23 ){
     mensaje += `${temperatura} grados centigrados es calurosa`;
+}
+else {
+    mensaje = `${temperatura} grados centigrados no es ideal =(` ;    
 }
 
 console.log(mensaje);
+
 
 /* 
 // rango de 23 a 30-> es calurosa
@@ -143,29 +144,77 @@ else if(temperatura>=23 && temperatura <= 30){
 */
 
 /**
+ * Establece la velocidad de un ventilador
  * @param {number} velocidad del ventilador
- * @return {number} mensaje de la velocidad establecida del ventilador
+ * @return {number} mensaje de la velocidad establecida
  */
-const setVelocidadVentilador = ( velocidad = 0)=>{
+const setVelocidadVentilador = ( velocidad = 0 )=>{
     let mensaje;
-
-    //la condicional switch utiliza la comparacion estricta ( === )
-    switch (parseInt (velocidad )){
+    // la condicional switch utiliza la comparación estricta ( === )
+    switch (  parseInt( velocidad) ) {
         case 0:
-            mensaje = "apagado";
-            break;
+            mensaje = "apagado"; break;
         case 1:
-            mensaje = "velocidad baja";
-            break;   
+            mensaje = "velocidad baja"; break;
         case 2:
-            mensaje = "velocidad media";
-            break;   
+            mensaje = "velocidad media"; break;
         default:
-            mensaje = "el nivel no existe";
-            break;        
+            mensaje = "el nivel no existe"; break;
     }
     return mensaje;
 }
-console.log(`La velocidad del ventilador esta en ${setVelocidadVentilador (1)}`);
-console.log(`La velocidad del ventilador esta en ${setVelocidadVentilador (8)}`);
-console.log(`La velocidad del ventilador esta en ${setVelocidadVentilador ("2")}`);
+console.log(`La velocidad del ventilador está en ${setVelocidadVentilador(1)}`); // baja
+console.log(`La velocidad del ventilador está en ${setVelocidadVentilador(8)}`); // no existe
+console.log(`valor: 2 ${setVelocidadVentilador(2)}`); // velocidad media
+console.log(`valor: "2" ${setVelocidadVentilador("2")}`); // velocidad media
+console.log(`valor: ? ${setVelocidadVentilador()}`); // apagado
+
+// console.log(`valor: ? ${setVelocidadVentilador( prompt("Velocidad", 1))}`); // velocidad baja
+
+
+
+
+// ------------------- Ejercicio Estaciones del año --------------------------
+/*
+ Preguntar por el número de mes (prompt o DOM), del 1 al 12
+ Desplegar de acuerdo al mes un Alert (mostrarlo en el DOM) la estación del año.
+
+ mes 12, 1, 2 = invierno.
+ mes 3, 4, 5  = primavera
+ mes 6, 7, 8  = verano
+ mes 9, 10, 11 = otoño 
+
+ Realizar una versión con if-else-elseif y otra con switch.
+
+
+*/
+/* const numeroMes = (12)
+let msj = "La estación del año es : "
+if (numeroMes >=9 && numeroMes >=11){
+    msj += `${numeroMes} invierno`;
+}
+console.log(msj);
+ */
+
+
+//----------- Operador ternario----------------
+
+ /* 
+ 
+ Es el unico operador de JS que tiene 3 operandos.
+ Generalmente se utiliza como opcion a la sentencia if-else.
+
+ Sintaxis:
+    condicion ? expresionSiLaCondicionEsVerdadera : expresionSiCondicionEsFalsa;
+
+ */
+
+const pagoTarjetaCredito = true;
+
+if (pagoTarjetaCredito === true ) msj= "A realizado el pago";
+else msj= "No ha realizado el pago de TC";
+
+console.log(`El usuario ${msj}`);
+
+
+
