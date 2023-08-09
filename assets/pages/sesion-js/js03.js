@@ -195,7 +195,51 @@ if (numeroMes >=9 && numeroMes >=11){
 }
 console.log(msj);
  */
+/* 
+function seasons(){
+    const number = parseInt(prompt());
+    
+    switch(number){
+        case 1:
+        case 2: 
+        case 12: alert("invierno");
+        break;
+        case 3:
+        case 4:
+        case 5: alert("primavera");
+        break;
+        case 6:
+        case 7: 
+        case 8: alert("verano");
+        break;
+        case 9:
+        case 10:
+        case 11: alert("otoño");
+        break;
+        default: alert("not a number");
+        break;
+    }
+}
 
+
+function seasonsIf(){
+    const number = parseInt(prompt());
+    const invierno = number == 1 || number == 2 || number == 12;
+    const primavera = number == 3 || number == 4 || number == 5;
+    const verano = number == 6 || number == 7 || number == 8;
+    const otoño = number == 9 || number == 10 || number == 11;
+    if(invierno){
+        alert("invierno");
+    } else if(primavera){
+        alert("primavera");
+    } else if(verano){
+        alert("verano");
+    } else if(otoño){
+        alert("otoño")
+    }
+
+}
+ */
 
 //----------- Operador ternario----------------
 
@@ -209,12 +253,58 @@ console.log(msj);
 
  */
 
-const pagoTarjetaCredito = false;
+/* const pagoTarjetaCredito = false;
 let msj;
 if (pagoTarjetaCredito) msj= "A realizado el pago";
-else msj= "No ha realizado el pago de TC";
-
+else msj= "No ha realizado el pago de TC"; 
+*/
+/* const pagoTarjetaCredito = true;
+const msj = pagoTarjetaCredito === true ? "ha realizado el pago de TC" : "No ha realizado el pago de TC"
 console.log(`El usuario ${msj}`);
+ */
+//----------mini ejercicio-----------
+ /* 
+ Preguntar con prompt la eda del usuario: 20
+ Si es >= 18, indicar en la consola "El usuario es mayor de edad";
+Si no cumple con la condicion "El usuario no es mayor de edad".
+ */
+
+/* const edadUsuario = parseInt(prompt());
+const result = "El usuario es " */
+
+
+/* //respuesta de Eduardo P.
+const userAge = 17;
+const mayorEdad = userAge >= 18 ? "" : "no";
+console.log(`El usuario ${mayorEdad} es mayor de edad`);
+
+//respuesta de Lalo
+
+let edad = prompt("Ingresa la edad");
+//const confirmacion = edad >= 18 ? "El usuario es mayor de edad" : "El usuario no es mayor de edad";
+//alert(confirmacion);
+alert(edad >= 18 ? "El usuario es mayor de edad" : "El usuario no es mayor de edad");
+ */
+
+
+//......... Cálculo del factorial de un número usando recursividad ...............
+
+/* function factorialConRecursividad( numero ){
+    if ( numero <= 0 ) {
+        return 1;
+    } else {
+        console.log(`${numero} * ${numero-1}`);
+        return numero * factorialConRecursividad( numero -1 );
+    }
+}
+ */
+
+function factorialConRecursividad( numero ){
+    const factorial = numero < 1 ? 1 :  numero * factorialConRecursividad( numero -1 );
+    return factorial;
+}
+console.log(`El factorial recursivo de 5 es: ${factorialConRecursividad(5)}`);
+
 
 
 
