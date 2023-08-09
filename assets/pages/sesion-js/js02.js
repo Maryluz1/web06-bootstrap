@@ -271,3 +271,62 @@ console.log(`Cantidad de letras p:${ counterCharacter(phasePP, "p") + counterCha
         }
     }
 */
+
+//......... Cálculo del factorial de un número usando ciclo for ...............
+function factorialConCicloFor( numero ) {
+    let factorial = 1;
+
+    for (let i = numero; i > 0; i--) {// i = i - 1
+        console.log(`factorial: ${factorial} * ${i} = ${factorial*i}`)
+        factorial = factorial * i;        
+    }
+    return factorial;
+}
+
+console.log(`El factorial de 5 es: ${factorialConCicloFor(5)}`) // 1*2*3*4*5 = 120
+
+//......... Cálculo del factorial de un número usando recursividad ...............
+
+function factorialConRecursividad( numero ){
+    if ( numero === 1 ) {
+        return 1;
+    } else {
+        console.log(`${numero} * ${numero-1}`);
+        return numero * factorialConRecursividad( numero -1 );
+    }
+}
+
+console.log(`El factorial recursivo de 5 es: ${factorialConRecursividad(5)}`);
+
+// -------------- Saludar con recursividad ---------------------
+/*
+ Generar una función recursiva que muestre en consola un saludo
+ donde se indique el número saludo desado
+
+ ej: saludar 10 veces
+
+  Saludo 1
+  Saludo 2
+  Saludo 3
+   ....
+  Saludo 9
+  Saludo 10
+
+*/
+
+function saludoz( numeroSaludo){
+    if( numeroSaludo === 1){
+        return `Saludo ${numeroSaludo}`;
+    }
+    else {
+        // llamada recursiva
+        console.log(`Saludo ${numeroSaludo}`)
+        return saludoz( numeroSaludo - 1 );
+    }
+}
+console.log(saludoz(10));
+
+
+saludo(10);
+
+// hacer el mismo ejercicio pero que imprime del 1 al 10
