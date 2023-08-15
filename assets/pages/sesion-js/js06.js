@@ -64,3 +64,42 @@ const newElement = () =>{
 }
 
 newElement();
+
+
+// ---------------- Cambiar el color de texto -----------------
+// style.color
+
+const changeColor = ( color ) => {
+    const descriptionCh30 = document.getElementById("descriptionCh30");
+    descriptionCh30.style.color = color; // Cambio de color de fuente
+    descriptionCh30.style.border = `thin solid ${color}`;
+
+}
+
+changeColor( "beige" );
+
+// ------------------ Propiedades de visualización ---------------
+//                       Desaparecer el elemento
+// display : none (quitar el elemento del DOM)
+// visibility: hidden (ocultar el elemento)
+
+const getReferenceTitleGeneration = () => {
+ return document.getElementById("generation");
+}
+
+const displayNoneElement = () => {
+ const generation = getReferenceTitleGeneration();
+ generation.style.display = "none"; // quitar el elemento
+}
+
+const hiddenElement = () => {
+    const generation = getReferenceTitleGeneration();
+    generation.style.visibility = "hidden"  // ocultar el elemento
+}
+
+const resetElements = () => {
+    const generation = getReferenceTitleGeneration();
+    generation.style.visibility = "visible"; 
+    generation.style.display = "inline"; 
+
+}
